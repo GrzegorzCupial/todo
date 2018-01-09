@@ -15,7 +15,8 @@ function addTask(text) {
     const todoDate = document.createElement('div');
     todoDate.classList.add('todo__element-bar');
     const date = new Date();
-    const dateText = date.getDate() + '-' + (date.getMonth()+1) + '-' + date.getFullYear() + ' hour: ' + date.getHours() + ':' + date.getMinutes();
+    const months = ["January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December"];
+    const dateText = ((date.getDate()<10?'0':'') + date.getDate()) + ' ' + months[date.getMonth()] + ' ' + date.getFullYear() + ' / ' + date.getHours() + ':' + ((date.getMinutes()<10?'0':'') + date.getMinutes());  // fixed minutes that returns one number if there is 0 before 0-9
     todoDate.innerText = dateText;
 
     //delete button
