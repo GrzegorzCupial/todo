@@ -16,7 +16,7 @@
             <span class="b-btn__inner">GC</span>
         </span>
     </a>
-    <section class="todo__item">
+    <div class="todo__item">
         <form class="todo__form" id="todoForm">
             <div class="todo__form-row">
                 <label class="todo__form-label" for="todoMessage">Task content</label>
@@ -26,34 +26,24 @@
                 <button type="submit" class="button todo__form-button">Add</button>
             </div>
         </form>
-    </section>
-
-    <section class="todo__item todo__list-cnt">
-        <header class="todo__list-header">
-            <h2 class="todo__list-title">
-                Tasks List
-            </h2>
-            <form class="todo__list-search-form">
-                <input type="search" id="todoSearch" class="todo__list-search">
-
-            </form>
-        </header>
-
-        <div class="todo__list" id="todoList">
-            <div class="todo__element">
-                <div class="todo__element-bar">
-                    <h3 class="todo__element-date">--date--</h3>
-                    <button class="todo__element-delete" title="Delete Task">
-                    <i class="far fa-trash-alt"></i>
-                    </button>
-                </div>
-                <div class="todo__element-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio laudantium quasi blanditiis enim molestias explicabo
-                    id totam veniam corporis maiores.
-                </div>
+        <section class="todo__list-cnt">
+            <header class="todo__list-header">
+                <h2 class="todo__list-title">
+                    Tasks List
+                </h2>
+                <form class="todo__list-search-form">
+                    <input type="search" id="todoSearch" class="todo__list-search">
+    
+                </form>
+            </header>
+    
+            <div class="todo__list" id="todoList">
+    
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+
 
     <script src="js/index.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
