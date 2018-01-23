@@ -1,6 +1,5 @@
 let todoList = null;
 let todoForm = null;
-let todoSearch = null;
 
 function addTask(text) {
     //todo element
@@ -15,10 +14,8 @@ function addTask(text) {
     const todoDate = document.createElement('div');
     todoDate.classList.add('todo__element-bar');
     const date = new Date();
-    const add = "Added ";
-    const addColor = add.fontcolor("green");
     const months = ["January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December"];
-    const dateText =  addColor + ((date.getDate()<10?'0':'') + date.getDate()) + ' ' + months[date.getMonth()] + ' ' + date.getFullYear() + ' / ' + date.getHours() + ':' + ((date.getMinutes()<10?'0':'') + date.getMinutes());  // fixed minutes that returns one number if there is 0 before 0-9
+    const dateText =  'Added ' + ((date.getDate()<10?'0':'') + date.getDate()) + ' ' + months[date.getMonth()] + ' ' + date.getFullYear() + ' / ' + date.getHours() + ':' + ((date.getMinutes()<10?'0':'') + date.getMinutes());  // fixed minutes that returns one number if there is 0 before 0-9
     todoDate.innerText = dateText;
 
     //delete button
@@ -36,18 +33,21 @@ function addTask(text) {
     todoText.classList.add('todo__element-text');
     todoText.innerText = text;
 
+
     //merge
     todo.appendChild(todoBar);
     todo.appendChild(todoText);
 
     //put into list
     todoList.append(todo);
+    localStorage.setItem('todo', JSON.stringify(todo))
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     todoList = document.querySelector('#todoList');
     todoForm = document.querySelector('#todoForm');
     todoSearch = document.querySelector('#todoSearch');
+    const items = JSON.parse(localStorage.getItem('items')) || [];
 
     todoForm.addEventListener('submit', function (e) {
         e.preventDefault();
